@@ -9,6 +9,7 @@ export default function Question(props) {
   const progressionColor = props.progressionColor;
   const suggAnswers = getSuggAnswers(question.id);
   const currentQuestion = props.currentQuestion;
+  const nb_questions = props.nb_questions;
   const grade = props.grade;
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isRevealed, setIsRevealed] = useState(false);
@@ -108,7 +109,7 @@ export default function Question(props) {
   );
 
   const nextOrFinishButton =
-    currentQuestion != 39 ? (
+    currentQuestion != nb_questions - 1 ? (
       <button
         onClick={handleGoToNext}
         className="cursor-pointer bg-blue-700 hover:bg-blue-500 hover:scale-102 text-xl text-white px-6 py-1.5 rounded-sm"

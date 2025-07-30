@@ -36,7 +36,7 @@ export default function Quiz() {
     label = `Presque arrivé 🌠 ${progression} %`;
   } else if (progression >= 50) {
     label = `Pull bro 💪 ${progression} %`;
-  } else if (progression >= 10) {
+  } else if (progression >= 0) {
     label = `Relax ? 🧘‍♂️ ${progression} %`;
   }
 
@@ -83,6 +83,7 @@ export default function Quiz() {
               question={questions[currentQuestion]}
               progressionColor={progressionColor}
               currentQuestion={currentQuestion}
+              nb_questions={nb_questions}
               goToNext={goToNext}
               incrementGrade={incrementGrade}
               grade={grade}
